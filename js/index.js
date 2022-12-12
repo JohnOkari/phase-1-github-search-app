@@ -19,7 +19,8 @@ githubForm.addEventListener('submit', e => {
       // Loop through the search results and add each user to the user list
       data.items.forEach(item => {
         const li = document.createElement('li');
-        li.innerHTML = `<a href="${item.html_url}" target="_blank">${item.login}</a>`;
+        // li.innerHTML = `<a href="${item.html_url}" target="_blank">${item.login}</a>`;
+        li.innerHTML = item.login
         userList.appendChild(li);
       });
     });
@@ -37,7 +38,8 @@ userList.addEventListener('click', e => {
       // Loop through the search results and add each repository to the repos list
       data.forEach(repo => {
         const li = document.createElement('li');
-        li.innerHTML = `<a href="${repo.html_url}" target="_blank">${repo.name}</a>`;
+        // li.innerHTML = `<a href="${repo.html_url}" target="_blank">${repo.name}</a>`;
+        li.innerHTML = repo.name
         reposList.appendChild(li);
       });
     });
